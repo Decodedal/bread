@@ -2,6 +2,13 @@ const express = require('express')
 require('dotenv').config()
 const app = express()
 
+
+// MIDDLEWARE
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
+
 const breadRoutes = require('./controllers/bread_controller')
 
 const PORT = process.env.PORT
