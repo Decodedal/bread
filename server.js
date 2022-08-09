@@ -8,6 +8,9 @@ app.use(express.static("public"))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+// this is how you read that data
+app.use(express.urlencoded({extended: true}))
+
 
 
 const breadRoutes = require('./controllers/bread_controller')

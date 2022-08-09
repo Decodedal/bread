@@ -11,6 +11,31 @@ router.get('/',(req,res)=>{
     )
 })
 
+//post rrequest to /breads
+router.post("/",(req,res)=>{
+  console.log("got a post request to /breads",req.body)
+  let newBread = req.body
+  //if has gluten is defined
+  if(newBread.hasGluten === 'true'){
+    newBread.hasGluten = 'true'
+  }else{
+    //assume it does not have gluten
+    newBread.hasGluten = 'false'
+    //in a real app dont assume throw a 400//res.(400).send("error must define gluten")
+  }
+  //insert the bread
+  Bread.push(newBread)
+  // res.send({'message':'created a new bread',newBread})
+  //redirect to the breads index
+  res.redirect("/breads")
+
+})
+
+//view to create new breads
+router.get("/new",(req,res)=>{
+  res.render("new")
+})
+
 router.get('/:arrayIndex',(req,res)=>{
     const arrayIndex = req.params.arrayIndex
     //sends raw data

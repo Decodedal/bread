@@ -17,6 +17,7 @@ function Index({breads, title}){
                     })
                 }
             </ul>
+            <a href='/breads/new'>create a new bread</a>
         </Default>
     )
 }
