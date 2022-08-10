@@ -1,7 +1,7 @@
 const React = require("react")
 const Def = require("./layouts/default")
 
-function ShowView({bread}){
+function ShowView({bread,index}){
     return(
         <Def title ="Show Details">
               <h2>show details for {bread.name}</h2>
@@ -16,6 +16,10 @@ function ShowView({bread}){
                     :<span> does not have gluten</span>
                 }
               </p>
+              <form action={`/breads/${index}?_method=DELETE`}
+              method ="POST">
+               <input type="submit" value='DELETE'/>
+              </form>
               
         </Def>
     )

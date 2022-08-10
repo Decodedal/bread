@@ -35,23 +35,34 @@ router.post("/",(req,res)=>{
 router.get("/new",(req,res)=>{
   res.render("new")
 })
-
+//show
 router.get('/:arrayIndex',(req,res)=>{
     const arrayIndex = req.params.arrayIndex
-    //sends raw data
-    // res.send(Bread[arrayIndex])
-    const breadNum = Bread[arrayIndex]
-    console.log("get request to bread data", Bread[arrayIndex])
-    if(breadNum){
-    res.render("show",
-    {
-     bread:Bread[arrayIndex],
-     title:"show"
-    })
-  }else{
-    res.render("notfound")
-  }
+if(Bread[arrayIndex]){
+  res.render('Show',{
+    bread:Bread[arrayIndex],
+    index:arrayIndex,
+    title:"show"
+  })
+}else{
+  res.render('404')
+}
+//     const breadNum = Bread[arrayIndex]
+//     console.log("get request to bread data", Bread[arrayIndex])
+//     if(breadNum){
+//     res.render("show",
+//     {
+//      bread:Bread[arrayIndex],
+//      title:"show"
+//     })
+//   }else{
+//     res.render("notfound")
+//   }
+ })
+//delete path
+router.delete('/:arrayIndex',(req,res)=>{
+ Bread.splice(req.params.arrayIndex, 1);
+ res.status(303).redirect('/breads')
 })
-
 
 module.exports = router
