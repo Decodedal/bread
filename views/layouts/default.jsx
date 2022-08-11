@@ -8,6 +8,7 @@ function Default(html){
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css"/>
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"/>
                 <link rel='stylesheet' href='/main.css'></link>
+                <link rel='shortcut icon' type='image/jpg' href='../images/bread.jpg'/>
             </head>
             <body>
                 <h1>HTML Rendered!</h1>
