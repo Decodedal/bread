@@ -1,6 +1,7 @@
 const express = require('express')
 require('dotenv').config()
 const app = express()
+const methodOverride = require('method-override')
 
 
 // MIDDLEWARE
@@ -10,7 +11,7 @@ app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 // this is how you read that data
 app.use(express.urlencoded({extended: true}))
-
+app.use(methodOverride('_method'))
 
 
 const breadRoutes = require('./controllers/bread_controller')

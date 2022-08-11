@@ -1,7 +1,7 @@
 const React = require("react")
 const Def = require("./layouts/default")
 
-function ShowView({bread,index}){
+function ShowView({bread, index}){
     return(
         <Def title ="Show Details">
               <h2>show details for {bread.name}</h2>
